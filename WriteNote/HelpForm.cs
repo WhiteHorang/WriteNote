@@ -390,7 +390,7 @@ namespace WriteNote
 
             // 12
             Section("12. 프로그램 정보");
-            Item("버전", "WriteNote 1.0 (C# Windows Forms, .NET Framework 4.7.2)");
+            Item("버전", "WriteNote 1.0.1 (C# Windows Forms, .NET Framework 4.7.2)");
             Item("배포 형태", "WriteNote.exe 파일 하나. 필요한 구성 요소와 맞춤법 사전이 exe 안에 들어 있습니다.");
             Item("실행 조건", ".NET Framework 4.7.2 이상 (Windows 10/11에는 기본으로 들어 있음)");
             Sub("사용한 외부 구성 요소");

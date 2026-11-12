@@ -76,4 +76,5 @@ Release 페이지에서 `WriteNote.exe`를 받아 실행하면 됩니다. 설치
 | [hunspell-dict-ko](https://github.com/spellcheck-ko/hunspell-dict-ko) 0.7.94 (한국어 맞춤법 사전) | GPL-3.0 |
 | System.Memory, System.Buffers, System.Numerics.Vectors, System.Runtime.CompilerServices.Unsafe | MIT (Microsoft) |
 
+모두 수정하지 않고 그대로 사용합니다. 버전별 원본 소스 위치와 저작권 고지는 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)에,
 라이선스 전문은 `WriteNote/Licenses/`, `WriteNote/Dictionaries/` 폴더와 프로그램 설명서 13장에 있습니다.

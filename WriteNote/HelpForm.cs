@@ -398,6 +398,13 @@ namespace WriteNote
             Item("hunspell-dict-ko 0.7.94 (한국어 맞춤법 사전)", "GPL-3.0 — https://github.com/spellcheck-ko/hunspell-dict-ko");
             Item("System.Memory, System.Buffers, System.Numerics.Vectors, System.Runtime.CompilerServices.Unsafe", "Microsoft, MIT");
             Note("각 구성 요소의 라이선스 전문은 13장에 있습니다.");
+            Sub("원본 소스 (모두 수정하지 않고 그대로 사용)");
+            Item("hunspell-dict-ko 0.7.94 (GPL-3.0)", "https://github.com/spellcheck-ko/hunspell-dict-ko/tree/0.7.94");
+            Item("WeCantSpell.Hunspell 7.0.1 (MPL 1.1 조건으로 사용)", "https://github.com/aarondandy/WeCantSpell.Hunspell/tree/7.0.1");
+            Item("Newtonsoft.Json", "https://github.com/JamesNK/Newtonsoft.Json");
+            Item("Microsoft 보조 구성 요소", "https://github.com/dotnet/corefx, https://github.com/dotnet/runtime");
+            Note("맞춤법 사전은 WriteNote가 실행할 때 데이터로 읽어 쓰는 별개의 저작물이며, GPL-3.0에 따라 누구나 복사·수정·재배포할 수 있습니다.");
+            Note("자세한 고지: 저장소의 THIRD-PARTY-NOTICES.md (https://github.com/WhiteHorang/WriteNote)");
 
             // 13 - exe 안에 넣어 둔 라이선스 문서
             Section("13. 라이선스 전문");

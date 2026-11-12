@@ -1,9 +1,20 @@
 # WriteNote
 
+[![최신 버전](https://img.shields.io/github/v/release/WhiteHorang/WriteNote?label=%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84)](https://github.com/WhiteHorang/WriteNote/releases/latest)
+
 집중해서 글을 쓰기 위한 Windows 글쓰기 프로그램입니다.
 C# Windows Forms(.NET Framework 4.7.2)로 만들었으며, 문서는 RTF 파일로 저장합니다.
 
 ![글쓰기 화면과 맞춤법 물결선](docs/images/main-spellcheck.png)
+
+## 내려받기
+
+**[⬇ 최신 버전 내려받기 (WriteNote.exe)](https://github.com/WhiteHorang/WriteNote/releases/latest)**
+
+Release 페이지에서 `WriteNote.exe`를 받아 실행하면 됩니다. 설치는 필요 없습니다.
+
+- 실행 조건: Windows 10/11 (.NET Framework 4.7.2 이상, Windows에 기본 포함)
+- 처음 실행할 때 "Windows의 PC 보호" 창이 뜨면 **추가 정보 → 실행**을 누르세요. (서명하지 않은 프로그램이라 나오는 안내입니다)
 
 ## 주요 기능
 
@@ -21,12 +32,9 @@ C# Windows Forms(.NET Framework 4.7.2)로 만들었으며, 문서는 RTF 파일�
 
 자세한 기능 목록은 [docs/WriteNote_기능_정리.md](docs/WriteNote_기능_정리.md)에 있습니다.
 
-## 실행
-
-- 실행 파일은 **`WriteNote.exe` 하나**입니다. 필요한 구성 요소와 맞춤법 사전이 exe 안에 들어 있습니다.
-- Windows 10/11 (.NET Framework 4.7.2 이상, Windows에 기본 포함)
-
 ## 빌드
+
+실행 파일은 **`WriteNote.exe` 하나**입니다. 필요한 구성 요소와 맞춤법 사전이 빌드할 때 exe 안에 들어갑니다.
 
 1. Visual Studio(.NET 데스크톱 개발 워크로드)에서 `WriteNote.slnx`를 엽니다.
 2. 빌드하면 NuGet 패키지(`packages/`)를 자동으로 받습니다.

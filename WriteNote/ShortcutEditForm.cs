@@ -48,6 +48,7 @@ namespace WriteNote
         public ShortcutEditForm()
         {
             InitializeComponent();
+            AppIcon.Apply(this);
 
             // 입력할 내용 칸에서는 Enter로 줄을 바꿀 수 있게 한다.
             txtShortcutContent.AcceptsReturn = true;

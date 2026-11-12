@@ -10,6 +10,7 @@ namespace WriteNote
         public SettingsForm()
         {
             InitializeComponent();
+            AppIcon.Apply(this);
 
             // Esc를 누르면 '취소'와 같게 닫는다. (저장하지 않은 변경이 있으면 확인)
             CancelButton = btnCancelSettings;

@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <!-- 탐색기·작업 표시줄에 보이는 exe 아이콘 -->
+    <ApplicationIcon>WriteNote.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -71,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="AppIcon.cs" />
     <Compile Include="EmbeddedAssemblies.cs" />
     <Compile Include="PathHelper.cs" />
     <Compile Include="ThemeManager.cs" />
@@ -172,6 +175,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <!-- 창 제목 표시줄·작업 표시줄·Alt+Tab에 쓰는 아이콘 (AppIcon.cs) -->
+    <EmbeddedResource Include="WriteNote.ico">
+      <LogicalName>WriteNote.AppIcon.ico</LogicalName>
+    </EmbeddedResource>
     <!-- exe 하나로 배포: 사전, 라이선스 문서, DLL을 exe 안에 넣는다 (EmbeddedAssemblies.cs 참고) -->
     <EmbeddedResource Include="Dictionaries\ko.aff">
       <LogicalName>WriteNote.Dictionaries.ko.aff</LogicalName>

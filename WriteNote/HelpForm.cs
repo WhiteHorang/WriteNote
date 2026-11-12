@@ -28,6 +28,7 @@ namespace WriteNote
         public HelpForm()
         {
             InitializeComponent();
+            AppIcon.Apply(this);
 
             // 디자이너의 어두운 테마 색을 현재 테마로 바꾼다.
             // (설명서 글자색은 아래에서 따로 칠하므로 반드시 먼저 적용한다)

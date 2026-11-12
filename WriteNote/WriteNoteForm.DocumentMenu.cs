@@ -245,6 +245,7 @@ namespace WriteNote
             using (Form inputForm = new Form())
             {
                 inputForm.Text = "문서 이름 변경";
+                AppIcon.Apply(inputForm);
                 inputForm.Size = new Size(350, 150);
                 inputForm.StartPosition = FormStartPosition.CenterParent;
                 inputForm.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -474,6 +475,7 @@ namespace WriteNote
             using (Form propertiesForm = new Form())
             {
                 propertiesForm.Text = "문서 속성";
+                AppIcon.Apply(propertiesForm);
                 propertiesForm.Size = new Size(400, 330);
                 propertiesForm.StartPosition = FormStartPosition.CenterParent;
                 propertiesForm.FormBorderStyle = FormBorderStyle.FixedDialog;

@@ -620,6 +620,29 @@ public static class DepResolverT {
   Check "설명서: 설정 메뉴 '화면 및 테마' 아래에 '설명서' 버튼" ($bh.Text -eq "설명서" -and $bh.Top -gt (F $sfH "btnAppearance").Top) "위치=$($bh.Top)"
   $sfH.Dispose()
 
+  # ════ 19-1. 프로그램 아이콘 ════
+  $appIcon = [WriteNote.AppIcon]::Icon
+  $icoStream = $asm.GetManifestResourceStream("WriteNote.AppIcon.ico")
+  $icoCount = 0
+  if ($icoStream -ne $null) { $hdr = New-Object byte[] 6; $icoStream.Read($hdr, 0, 6) | Out-Null; $icoCount = [BitConverter]::ToInt16($hdr, 4); $icoStream.Dispose() }
+  Check "아이콘: exe 안의 아이콘 (16~256, 9개 크기)" ($appIcon -ne $null -and $icoCount -eq 9) "크기 수=$icoCount"
+  $iconForms = @(
+    @("메인 화면", $main),
+    @("설정", [Activator]::CreateInstance($asm.GetType("WriteNote.SettingsForm"))),
+    @("설명서", [Activator]::CreateInstance($asm.GetType("WriteNote.HelpForm"))),
+    @("사용자 사전", [Activator]::CreateInstance($asm.GetType("WriteNote.UserDictionaryForm"))),
+    @("단축키 입력", [Activator]::CreateInstance($asm.GetType("WriteNote.ShortcutEditForm")))
+  )
+  $noIcon = @($iconForms | Where-Object { -not [object]::ReferenceEquals($_[1].Icon, $appIcon) } | ForEach-Object { $_[0] })
+  Check "아이콘: 모든 창에 WriteNote 아이콘" ($noIcon.Count -eq 0) ("빠진 창: " + ($noIcon -join ", "))
+  $iconForms | Select-Object -Skip 1 | ForEach-Object { $_[1].Dispose() }
+  $exeIcon = [System.Drawing.Icon]::ExtractAssociatedIcon((Join-Path $bin "WriteNote.exe")).ToBitmap()
+  $want = (New-Object System.Drawing.Icon($appIcon, 32, 32)).ToBitmap()
+  $diff = 0
+  for ($y = 0; $y -lt 32; $y += 2) { for ($x = 0; $x -lt 32; $x += 2) { if ([Math]::Abs($exeIcon.GetPixel($x, $y).ToArgb() - $want.GetPixel($x, $y).ToArgb()) -gt 0) { $diff++ } } }
+  Check "아이콘: exe 파일 아이콘 (탐색기·작업 관리자)" ($diff -lt 10) "다른 점 수=$diff / 256"
+  $exeIcon.Dispose(); $want.Dispose()
+
   # ════ 20. 문서 카드 우클릭 메뉴 (우클릭한 카드의 경로로 동작) ════
   $docsM = Join-Path $work "docsM"; Remove-Item $docsM -Recurse -Force -ErrorAction SilentlyContinue
   New-Item -ItemType Directory $docsM | Out-Null

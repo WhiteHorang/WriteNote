@@ -38,6 +38,7 @@ namespace WriteNote
         public MainForm()
         {
             InitializeComponent();
+            AppIcon.Apply(this);
 
             // 저장된 설정과 글쓰기 단축키 불러오기
             appSettings = SettingsManager.Load();

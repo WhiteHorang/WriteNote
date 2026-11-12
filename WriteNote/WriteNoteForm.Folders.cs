@@ -323,6 +323,7 @@ namespace WriteNote
             using (Button cancelButton = new Button())
             {
                 form.Text = title;
+                AppIcon.Apply(form);
                 form.ClientSize = new Size(340, 120);
                 form.StartPosition = FormStartPosition.CenterParent;
                 form.FormBorderStyle = FormBorderStyle.FixedDialog;

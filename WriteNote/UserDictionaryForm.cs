@@ -19,6 +19,7 @@ namespace WriteNote
         public UserDictionaryForm()
         {
             InitializeComponent();
+            AppIcon.Apply(this);
 
             words = SpellCheckService.GetUserWords();
 

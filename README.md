@@ -65,7 +65,7 @@ Release 페이지에서 `WriteNote.exe`를 받아 실행하면 됩니다. 설치
 
 ## 테스트
 
-자동 통합 테스트 108개 항목 (실제 사용자 데이터는 쓰지 않음). 실행 방법은 [tests/README.md](tests/README.md)를 참고하세요.
+자동 통합 테스트 111개 항목 (실제 사용자 데이터는 쓰지 않음). 실행 방법은 [tests/README.md](tests/README.md)를 참고하세요.
 
 ## 사용한 외부 구성 요소
 

@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{607E1644-DB08-49DA-AD8A-52702844B44F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WriteNote</RootNamespace>
+    <AssemblyName>WriteNote</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WeCantSpell.Hunspell, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WeCantSpell.Hunspell.7.0.1\lib\netstandard2.0\WeCantSpell.Hunspell.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="EmbeddedAssemblies.cs" />
+    <Compile Include="PathHelper.cs" />
+    <Compile Include="ThemeManager.cs" />
+    <Compile Include="TrashManager.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="BorderedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DarkMenuColorTable.cs" />
+    <Compile Include="DocumentInfo.cs" />
+    <Compile Include="RecentDocumentManager.cs" />
+    <Compile Include="RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortcutEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortcutEditForm.Designer.cs">
+      <DependentUpon>ShortcutEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortcutItem.cs" />
+    <Compile Include="SpellCheckService.cs" />
+    <Compile Include="ShortcutKeyHelper.cs" />
+    <Compile Include="ShortcutManager.cs" />
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDictionaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDictionaryForm.Designer.cs">
+      <DependentUpon>UserDictionaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WriteNoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.Editor.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.Documents.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.Settings.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.DocumentList.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.DocumentMenu.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.Trash.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.Spelling.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.Folders.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WriteNoteForm.Designer.cs">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortcutEditForm.resx">
+      <DependentUpon>ShortcutEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WriteNoteForm.resx">
+      <DependentUpon>WriteNoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <!-- exe 하나로 배포: 사전, 라이선스 문서, DLL을 exe 안에 넣는다 (EmbeddedAssemblies.cs 참고) -->
+    <EmbeddedResource Include="Dictionaries\ko.aff">
+      <LogicalName>WriteNote.Dictionaries.ko.aff</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\ko.dic">
+      <LogicalName>WriteNote.Dictionaries.ko.dic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\LICENSE-ko-dictionary.md">
+      <LogicalName>WriteNote.Licenses.hunspell-dict-ko-LICENSE.md</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionaries\LICENSE.GPL-3.txt">
+      <LogicalName>WriteNote.Licenses.GPL-3.0.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\Newtonsoft.Json-LICENSE.md">
+      <LogicalName>WriteNote.Licenses.Newtonsoft.Json-LICENSE.md</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\WeCantSpell.Hunspell-LICENSE.txt">
+      <LogicalName>WriteNote.Licenses.WeCantSpell.Hunspell-LICENSE.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\Microsoft-dotnet-LICENSE.txt">
+      <LogicalName>WriteNote.Licenses.Microsoft-dotnet-LICENSE.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll">
+      <LogicalName>WriteNote.Libs.Newtonsoft.Json.dll</LogicalName>
+      <Link>Libs\Newtonsoft.Json.dll</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\WeCantSpell.Hunspell.7.0.1\lib\netstandard2.0\WeCantSpell.Hunspell.dll">
+      <LogicalName>WriteNote.Libs.WeCantSpell.Hunspell.dll</LogicalName>
+      <Link>Libs\WeCantSpell.Hunspell.dll</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll">
+      <LogicalName>WriteNote.Libs.System.Buffers.dll</LogicalName>
+      <Link>Libs\System.Buffers.dll</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll">
+      <LogicalName>WriteNote.Libs.System.Memory.dll</LogicalName>
+      <Link>Libs\System.Memory.dll</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll">
+      <LogicalName>WriteNote.Libs.System.Numerics.Vectors.dll</LogicalName>
+      <Link>Libs\System.Numerics.Vectors.dll</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll">
+      <LogicalName>WriteNote.Libs.System.Runtime.CompilerServices.Unsafe.dll</LogicalName>
+      <Link>Libs\System.Runtime.CompilerServices.Unsafe.dll</Link>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

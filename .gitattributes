@@ -1,0 +1,6 @@
+# 맞춤법 사전과 라이선스 원문은 바이트 그대로 보관한다. (줄바꿈 자동 변환 금지)
+# 빌드할 때 exe 안에 그대로 들어가므로, 내용이 바뀌면 안 된다.
+*.aff -text
+*.dic -text
+WriteNote/Dictionaries/** -text
+WriteNote/Licenses/** -text

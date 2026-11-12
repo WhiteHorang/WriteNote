@@ -1,0 +1,14 @@
+# 빌드 결과물 (다시 빌드하면 만들어짐)
+bin/
+obj/
+
+# Visual Studio 개인 설정
+.vs/
+*.user
+*.suo
+
+# NuGet 패키지 (Visual Studio에서 빌드할 때 자동으로 다시 받음)
+packages/
+
+# 배포용 실행 파일 (저장소 대신 GitHub Releases에 따로 올림)
+WriteNote/배포/
